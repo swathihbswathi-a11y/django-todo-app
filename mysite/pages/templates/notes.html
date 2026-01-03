@@ -1,0 +1,15 @@
+<h1>Notes</h1>
+
+<form method="POST">
+  {% csrf_token %}
+  <input type="text" name="note" placeholder="Enter note" required>
+  <button type="submit">Add</button>
+</form>
+
+<ul>
+  {% for n in notes %}
+    <li>{{ n.text }}</li>
+  {% endfor %}
+</ul>
+
+<a href="/">Back</a>
